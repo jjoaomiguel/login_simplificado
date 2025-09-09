@@ -32,7 +32,7 @@
             <img src="./assets/icons/logo.png" alt="Logo" width="40" class="d-inline-block align-text-top me-2">
             CRUD Futebol
         </a>
-        <p id="data"></p>
+        <p><a href="login.php?logout=1">Sair</a></p>
     </div>
 </nav><br>
 

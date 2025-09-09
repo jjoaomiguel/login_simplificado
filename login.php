@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if ($dados) {
         $_SESSION["user_pk"] = $dados["pk"];
         $_SESSION["username"] = $dados["username"];
-        header("Location: login.php");
+        header("Location: index.php");
         exit;
     } else {
         $msg = "Usuário ou senha incorretos!";
@@ -39,14 +39,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
 <meta charset="utf-8">
 <title>Login Simples</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
 
-<?php if (!empty($_SESSION["user_id"])): ?>
+<?php if (!empty($_SESSION["user_pk"])): ?>
   <div class="card">
     <h3>Bem-vindo, <?= $_SESSION["username"] ?>!</h3>
     <p>Sessão ativa.</p>
+    <p><a href="index.php">Entrar no Sistema</a></p>
     <p><a href="?logout=1">Sair</a></p>
   </div>
 
@@ -57,9 +58,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <form method="post">
       <input type="text" name="username" placeholder="Usuário" required>
       <input type="password" name="password" placeholder="Senha" required>
-      <button type="submit" href="index.php">Entrar</button>
+      <button type="submit">Entrar</button>
     </form>
-    <p><small>Dica: admin / 123456</small></p>
+    <p><small>Dica: admin / 123 </small></p>
   </div>
 <?php endif; ?>
 
